@@ -1,8 +1,8 @@
 const myTable = document.querySelector('#pixelCanvas');
 let form = document.querySelector('form');
 var color;
-var h;
-var w;
+var height;
+var width;
 
 function colorCell (event) {
   event.target.style.backgroundColor = document.querySelector('#colorPicker').value;
@@ -12,13 +12,13 @@ function colorCell (event) {
   * This function creates a dynamic JavaScript grid of squares based on the user's input.
   * The grid is composed of the <tr> HTML element for columns and the <td> HTML element for rows.
   * These HTML elements are inserted via the JavaScript code in the function below (makeGrid).
-  * h refers to the height selected by the user on the webpage.
-  * w refers to the width selected by the user once the webpage.
+  * height refers to the height selected by the user on the webpage.
+  * width refers to the width selected by the user once the webpage.
 */
-function makeGrid (h, w) {
-  for (let i = 1; i <= h; i++) {
+function makeGrid (height, width) {
+  for (let i = 1; i <= height; i++) {
     const newTR = document.createElement('tr');  // Creates height amount of rows
-      for (let i = 1; i <= w; i++) {
+      for (let i = 1; i <= width; i++) {
         const newTD = document.createElement('td'); // Creates width amount of columns
         newTR.appendChild(newTD);
     }
@@ -40,8 +40,8 @@ myTable.addEventListener ('click', colorCell);
   * The body of the submitFunction(e) has 6 lines, the first line resets the CSS style of <table> to 'white', 
   * the second line removes any previously created rows (<td>) or columns (<tr>) from the previous 'submit' event.
   * the third line runs the method e.PreventDefault(), which is used to prevent the Submit button from clearing the table after its created.
-  * the fourth line sets the global variable h (for height) to the value inputted on the webpage by the user.
-  * the fifth line sets the global variable w (for width) to the value inputted on the webpage by the user.
+  * the fourth line sets the global variable height to the value inputted on the webpage by the user.
+  * the fifth line sets the global variable width to the value inputted on the webpage by the user.
   * the sixth line runs the makeGrid(h, w) function using/passing the recently updated variables h, w.
   * This allows the user to start with a clean canvas with no previous changes made to the table's cells.
 */
@@ -49,7 +49,7 @@ form.addEventListener ('submit', function submitFunction(e) {
   myTable.style.backgroundColor = 'white';
   myTable.innerHTML = '';
   e.preventDefault();
-  h = document.querySelector('#inputHeight').value;
-  w = document.querySelector('#inputWidth').value;
-  makeGrid(h, w);
+  height = document.querySelector('#inputHeight').value;
+  width = document.querySelector('#inputWidth').value;
+  makeGrid(height, width);
 });
