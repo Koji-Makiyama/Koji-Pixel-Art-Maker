@@ -13,3 +13,12 @@ I created this dynamic JavaScript web app for my Nanodegree at Udacity. Starter 
 For the starter files provided by Udacity, visit the following GitHub repository:
  
 https://github.com/udacity/project-pixel-art-maker-starter
+
+ 
+FOR WINDOWS:\
+Extract the cloned zip file.\
+Double click the index.html file. (This should run automatically via your default browser because browsers contain JavaScript engines!\
+Feel free to change the dimensions (height and width) of your desired grid.\
+Feel free to change the color picker as you desire.\
+If you wish to reset the entire grid, you can either refresh the webpage Ctrl + R, \or simply click the 'Submit' button again, which will generate an empty grid of the dimensions specified!\
+Enjoy!
